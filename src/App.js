@@ -1,26 +1,20 @@
 import React from 'react';
-import Header from './components/header/Header';
-import SearchBar from './components/SearchBar';
-import RecentActivity from './components/RecentActivity';
-import Settings from './components/Settings';
-import Footer from './components/Footer';
-import NavigationTabs from './components/NavigationTabs';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
 import './App.css';
 
 function App() {
-  const handleSearch = (query) => {
-    console.log('Search query:', query);
-  };
-
   return (
-    <div className="App">
-      <Header />
-      <SearchBar onSearch={handleSearch} />
-      <NavigationTabs />
-      <RecentActivity />
-      <Settings />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<Navigate to="/login" />} /> {/* Default route */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
