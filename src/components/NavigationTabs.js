@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './NavigationTabs.css';
 import Overview from './Overview';
+import MyActivity from './MyActivity';
+import ResumeCV from './ResumeCV';
+import ProfessionalGallery from './ProfessionalGallery';
 
 const NavigationTabs = () => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -9,6 +12,12 @@ const NavigationTabs = () => {
     switch (activeTab) {
       case 'Overview':
         return <Overview />;
+      case 'My Activity':
+        return <MyActivity />;
+      case 'Resume/CV':
+        return <ResumeCV />;
+      case 'Professional Gallery':
+        return <ProfessionalGallery />;
       // Add cases for other tabs here
       default:
         return null;
