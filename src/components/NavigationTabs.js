@@ -4,6 +4,7 @@ import Overview from './Overview';
 import MyActivity from './MyActivity';
 import ResumeCV from './ResumeCV';
 import ProfessionalGallery from './ProfessionalGallery';
+import Connections from './Connections';
 
 const NavigationTabs = () => {
   const [activeTab, setActiveTab] = useState('Overview');
@@ -18,7 +19,8 @@ const NavigationTabs = () => {
         return <ResumeCV />;
       case 'Professional Gallery':
         return <ProfessionalGallery />;
-      // Add cases for other tabs here
+      case 'Connections':
+        return <Connections />;
       default:
         return null;
     }
