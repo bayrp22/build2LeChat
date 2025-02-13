@@ -1,0 +1,23 @@
+.navigation-tabs {
+  display: flex;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.navigation-tabs button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navigation-tabs button.active,
+.navigation-tabs button:hover {
+  background-color: #0073e6;
+  color: white;
+}

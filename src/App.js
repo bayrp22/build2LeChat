@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar';
 import RecentActivity from './components/RecentActivity';
 import Settings from './components/Settings';
 import Footer from './components/Footer';
+import NavigationTabs from './components/NavigationTabs';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar onSearch={handleSearch} />
+      <NavigationTabs />
       <RecentActivity />
       <Settings />
       <Footer />
