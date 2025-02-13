@@ -11,3 +11,20 @@
 .login-page h1 {
   margin-bottom: 20px;
 }
+
+.register-link {
+  margin-top: 20px;
+}
+
+.register-link p {
+  margin-bottom: 5px;
+}
+
+.register-link a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
