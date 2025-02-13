@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/header/Header';
 import SearchBar from './components/SearchBar';
+import RecentActivity from './components/RecentActivity';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar onSearch={handleSearch} />
+      <RecentActivity />
     </div>
   );
 }
