@@ -3,10 +3,10 @@ import Login from '../components/Login';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 
-const LoginPage = () => {
+export default function LoginPage() {
   return (
-    <div className="login-page">
-      <h1>Login</h1>
+    <div className="login-container">
+      <h1>Sign In</h1>
       <Login />
       <div className="register-link">
         <p>Don't have an account?</p>
@@ -14,6 +14,4 @@ const LoginPage = () => {
       </div>
     </div>
   );
-};
-
-export default LoginPage;
+}

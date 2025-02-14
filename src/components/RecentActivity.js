@@ -1,7 +1,7 @@
 import React from 'react';
 import './RecentActivity.css';
 
-const RecentActivity = () => {
+export default function RecentActivity() {
   const activities = [
     { id: 1, description: 'Logged in' },
     { id: 2, description: 'Updated profile picture' },
@@ -18,6 +18,4 @@ const RecentActivity = () => {
       </ul>
     </div>
   );
-};
-
-export default RecentActivity;
+}

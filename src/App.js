@@ -4,16 +4,28 @@ import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import ProfilePage from './pages/ProfilePage';
 import './App.css';
+import NavigationTabs from './components/NavigationTabs';
+import Header from './components/header/Header';
+import RecentActivity from './components/RecentActivity';
+import ProfessionalGallery from './components/ProfessionalGallery';
+import ProtectedLayout from './components/ProtectedLayout';
 
 function App() {
+  console.log('[Debug] Header component:', Header);
+  console.log('[Debug] NavigationTabs component:', NavigationTabs);
+  console.log('[Debug] ProfessionalGallery component:', ProfessionalGallery);
+  console.log('[Debug] RecentActivity component:', RecentActivity);
+
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/profile/:userId" element={<ProfilePage />} />
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route element={<ProtectedLayout />}>
+            <Route path="/profile/:userId" element={<ProfilePage />} />
+            <Route path="/" element={<Navigate to="/profile" />} />
+          </Route>
         </Routes>
       </div>
     </Router>

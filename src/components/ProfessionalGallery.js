@@ -16,7 +16,7 @@ const ProfessionalGallery = () => {
   };
 
   return (
-    <div className="professional-gallery">
+    <div className="gallery">
       <h2>Professional Gallery</h2>
       <input type="file" multiple onChange={handleFileChange} />
       <div className="image-grid">

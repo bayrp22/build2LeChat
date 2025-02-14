@@ -33,7 +33,15 @@ const Register = () => {
     // Insert user data into custom_users table
     const { error: insertError } = await supabase
       .from('custom_users')
-      .insert([{ id: user.id, username, email: user.email }]);
+      .insert([{ 
+        id: user.id, 
+        username: username.trim(),
+        email: user.email,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+        role: 'member',
+        status: 'active'
+      }]);
 
     if (insertError) {
       console.error('Error inserting user data:', insertError);

@@ -4,6 +4,7 @@ import { supabase } from '../supabaseClient';
 const ProfileUpdate = () => {
   const [username, setUsername] = useState('');
   const [bio, setBio] = useState('');
+  const [avatar, setAvatar] = useState(null);
 
   const handleUpdate = async (event) => {
     event.preventDefault();
@@ -15,6 +16,10 @@ const ProfileUpdate = () => {
 
     if (error) console.error('Error updating profile:', error);
     else console.log('Profile updated successfully');
+  };
+
+  const handleAvatarUpload = async (e) => {
+    // Implementation of handleAvatarUpload function
   };
 
   return (

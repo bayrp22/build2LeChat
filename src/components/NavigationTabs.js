@@ -6,11 +6,11 @@ import ResumeCV from './ResumeCV';
 import ProfessionalGallery from './ProfessionalGallery';
 import Connections from './Connections';
 
-const NavigationTabs = () => {
-  const [activeTab, setActiveTab] = useState('Overview');
+const NavigationTabs = ({ activeTab }) => {
+  const [activeTabState, setActiveTabState] = useState('Overview');
 
   const renderContent = () => {
-    switch (activeTab) {
+    switch (activeTabState) {
       case 'Overview':
         return <Overview />;
       case 'My Activity':
@@ -30,32 +30,32 @@ const NavigationTabs = () => {
     <div>
       <div className="navigation-tabs">
         <button
-          className={activeTab === 'Overview' ? 'active' : ''}
-          onClick={() => setActiveTab('Overview')}
+          className={activeTabState === 'Overview' ? 'active' : ''}
+          onClick={() => setActiveTabState('Overview')}
         >
           Overview
         </button>
         <button
-          className={activeTab === 'My Activity' ? 'active' : ''}
-          onClick={() => setActiveTab('My Activity')}
+          className={activeTabState === 'My Activity' ? 'active' : ''}
+          onClick={() => setActiveTabState('My Activity')}
         >
           My Activity
         </button>
         <button
-          className={activeTab === 'Resume/CV' ? 'active' : ''}
-          onClick={() => setActiveTab('Resume/CV')}
+          className={activeTabState === 'Resume/CV' ? 'active' : ''}
+          onClick={() => setActiveTabState('Resume/CV')}
         >
           Resume/CV
         </button>
         <button
-          className={activeTab === 'Professional Gallery' ? 'active' : ''}
-          onClick={() => setActiveTab('Professional Gallery')}
+          className={activeTabState === 'Professional Gallery' ? 'active' : ''}
+          onClick={() => setActiveTabState('Professional Gallery')}
         >
           Professional Gallery
         </button>
         <button
-          className={activeTab === 'Connections' ? 'active' : ''}
-          onClick={() => setActiveTab('Connections')}
+          className={activeTabState === 'Connections' ? 'active' : ''}
+          onClick={() => setActiveTabState('Connections')}
         >
           Connections
         </button>

@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './components/NavigationTabs.css';
+import './components/ProfessionalGallery.css';
+import './components/RecentActivity.css';
+import './components/header/Header.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
