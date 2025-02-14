@@ -20,11 +20,15 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
+          {/* Public routes */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/" element={<Navigate to="/login" />} />
+
+          {/* Protected routes */}
           <Route element={<ProtectedLayout />}>
             <Route path="/profile/:userId" element={<ProfilePage />} />
-            <Route path="/" element={<Navigate to="/profile" />} />
+            <Route path="/profile" element={<Navigate to="/login" />} />
           </Route>
         </Routes>
       </div>
