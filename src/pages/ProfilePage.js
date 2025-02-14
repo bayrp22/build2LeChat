@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
+import ProfileLayout from '../components/ProfileLayout';
+import './ProfilePage.css';
 
 const ProfilePage = () => {
   const { userId } = useParams();
@@ -29,12 +31,13 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="profile-page">
-      <h1>Profile</h1>
-      <p>Email: {user.email}</p>
-      <p>Username: {user.username}</p>
-      {/* Add more user-specific information here */}
-    </div>
+    <ProfileLayout>
+      <div className="profile-content">
+        <h2>{user.username}'s Profile</h2>
+        <p>Email: {user.email}</p>
+        {/* Add more user-specific information here */}
+      </div>
+    </ProfileLayout>
   );
 };
 

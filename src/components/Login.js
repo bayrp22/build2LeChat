@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import { supabase } from '../supabaseClient';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const { user, session, error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) console.error('Error logging in:', error);
-    else console.log('Logged in user:', user, 'Session:', session);
+
+    const { data: { session, user }, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      console.error('Error logging in:', error);
+    } else {
+      console.log('Logged in user:', user);
+      console.log('Session:', session);
+      // Redirect to the profile page
+      if (user) {
+        navigate(`/profile/${user.id}`);
+      }
+    }
   };
 
   return (
