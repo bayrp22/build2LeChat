@@ -6,6 +6,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleRegister = async (event) => {
@@ -16,6 +17,7 @@ const Register = () => {
 
     if (signUpError) {
       console.error('Error registering:', signUpError);
+      setErrorMessage(signUpError.message);
       return;
     }
 
@@ -24,6 +26,7 @@ const Register = () => {
 
     if (loginError) {
       console.error('Error logging in:', loginError);
+      setErrorMessage(loginError.message);
       return;
     }
 
@@ -34,6 +37,7 @@ const Register = () => {
 
     if (insertError) {
       console.error('Error inserting user data:', insertError);
+      setErrorMessage(insertError.message);
     } else {
       console.log('User data inserted successfully');
       // Redirect to the profile page
@@ -65,6 +69,7 @@ const Register = () => {
         required
       />
       <button type="submit">Register</button>
+      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
     </form>
   );
 };
