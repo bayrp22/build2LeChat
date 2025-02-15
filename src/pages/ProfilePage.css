@@ -18,3 +18,140 @@
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.profile-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fdfaf0;
+}
+
+.profile-header-section {
+  width: 100%;
+  background-color: #003366;
+  color: white;
+  padding: 2rem;
+}
+
+.profile-header-content {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.avatar-container {
+  position: relative;
+}
+
+.profile-avatar {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+}
+
+.camera-btn {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background: white;
+  color: #003366;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.profile-title {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.profile-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.about-section,
+.gallery-section,
+.activity-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.edit-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  color: #003366;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.settings-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-update-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tab-list {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.social-link {
+  color: #4b5563;
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: #003366;
+}

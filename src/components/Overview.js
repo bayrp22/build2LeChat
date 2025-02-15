@@ -1,10 +1,8 @@
 import React from 'react';
 import './Overview.css';
 
-const Overview = () => {
-  const bio = "Passionate UX designer with 8+ years of experience creating user-centered digital experiences. Specialized in mobile applications and web platforms.";
-
-  const skills = [
+const Overview = ({ user }) => {
+  const defaultSkills = [
     "UI Design",
     "User Research",
     "Prototyping",
@@ -13,17 +11,24 @@ const Overview = () => {
     "Sketch",
   ];
 
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="overview">
-      <div className="about-me">
+    <div className="overview-grid">
+      <div className="about-section">
         <h2>About Me</h2>
-        <p>{bio}</p>
+        <p>{user?.bio || 'No bio available'}</p>
       </div>
-      <div className="skills">
+      
+      <div className="skills-section">
         <h2>Skills</h2>
-        <div className="skill-tags">
-          {skills.map((skill, index) => (
-            <span key={index} className="skill-tag">{skill}</span>
+        <div className="skills-grid">
+          {(user?.skills || defaultSkills).map((skill, index) => (
+            <span key={index} className="skill-tag">
+              {skill}
+            </span>
           ))}
         </div>
       </div>

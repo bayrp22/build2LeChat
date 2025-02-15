@@ -1,0 +1,42 @@
+.skills-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.add-skill-btn {
+  padding: 5px 10px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+.remove-skill-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 5px;
+}
+
+.remove-skill-btn:hover {
+  color: #ff0000;
+} 
